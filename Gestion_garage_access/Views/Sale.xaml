@@ -1,0 +1,23 @@
+﻿<Window x:Class="Gestion_garage_access.Views.Sale"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Gestion_garage_access.Views"
+        mc:Ignorable="d"
+        Title="Sale" Height="450" Width="800">
+    <Grid>
+        <Label Content="Vendre une piece " HorizontalAlignment="Left" Margin="194,68,0,0" VerticalAlignment="Top" Width="382" FontSize="48"/>
+        <Label Content="Nom de la piece :" HorizontalAlignment="Left" Margin="178,167,0,0" VerticalAlignment="Top" Width="150" FontSize="18"/>
+        <TextBlock x:Name="nomPiece" HorizontalAlignment="Left" Margin="472,172,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="21" Width="260" FontSize="18"/>
+        <Label Content="Ref de la piece :" HorizontalAlignment="Left" Margin="190,206,0,0" VerticalAlignment="Top" Width="138" FontSize="18"/>
+        <TextBlock x:Name="refPiece" HorizontalAlignment="Left" Margin="472,212,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="21" Width="260" FontSize="18"/>
+        <Label Content="Qualite de la piece :" HorizontalAlignment="Left" Margin="159,240,0,0" VerticalAlignment="Top" Width="169" FontSize="18"/>
+        <TextBlock x:Name="qualPiece" HorizontalAlignment="Left" Margin="472,250,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="21" Width="260" FontSize="18"/>
+        <Label Content="Nombre de piece a vendre  :" HorizontalAlignment="Left" Margin="99,283,0,0" VerticalAlignment="Top" Width="250" FontSize="18"/>
+        <TextBox x:Name="nbrPiece" HorizontalAlignment="Left" Margin="472,283,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="34" Width="260" FontSize="18"/>
+        <Button Content="Valider" HorizontalAlignment="Left" Margin="249,343,0,0" VerticalAlignment="Top" Width="167" FontSize="18" Click="Button_Click"/>
+        <Button Content="Annuler" HorizontalAlignment="Left" Margin="533,343,0,0" VerticalAlignment="Top" Width="168" FontSize="18"/>
+
+    </Grid>
+</Window>

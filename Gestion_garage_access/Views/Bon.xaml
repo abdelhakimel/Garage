@@ -1,0 +1,72 @@
+﻿<UserControl x:Class="Gestion_garage_access.Views.Bone"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:Gestion_garage_access.Views"
+      mc:Ignorable="d"
+       Height="633.574" Width="1081.047">
+
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="603*"/>
+            <ColumnDefinition Width="478*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="401*"/>
+            <RowDefinition Height="49*"/>
+        </Grid.RowDefinitions>
+        <GroupBox Header="Entreprise" HorizontalAlignment="Left" Height="242" Margin="10,14,0,0" VerticalAlignment="Top" Width="498">
+            <Grid Height="168" Margin="0,10,0,0" VerticalAlignment="Top" Width="413">
+                <Button Content="Ajouter" HorizontalAlignment="Left" Margin="65,126,0,0" VerticalAlignment="Top" Width="133" RenderTransformOrigin="-0.711,0.694" Click="Button_Click"/>
+                <TextBox Name="enName" HorizontalAlignment="Left" Height="23" Margin="123,10,0,0" TextWrapping="Wrap" Text="{Binding Entreprise.Name,Mode=TwoWay,ValidatesOnNotifyDataErrors=True, UpdateSourceTrigger=PropertyChanged}" VerticalAlignment="Top" Width="253"/>
+                <Label Content="Nom :" HorizontalAlignment="Left" Margin="45,15,0,0" VerticalAlignment="Top"/>
+                <TextBox Name="enTel" HorizontalAlignment="Left" Height="23" Margin="123,61,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="253" Text="{Binding Entreprise.Tel,Mode=TwoWay,ValidatesOnNotifyDataErrors=True, UpdateSourceTrigger=PropertyChanged}" />
+                <Label Content="Tel :" HorizontalAlignment="Left" Margin="45,61,0,0" VerticalAlignment="Top"/>
+                <Button Content="Annuler" HorizontalAlignment="Left" Margin="243,126,0,0" VerticalAlignment="Top" Width="133" RenderTransformOrigin="-0.711,0.694" Click="Button_Click_1"/>
+
+            </Grid>
+        </GroupBox>
+        <GroupBox Header="Employer" HorizontalAlignment="Left" Height="242" Margin="521,14,0,0" VerticalAlignment="Top" Width="532" Grid.ColumnSpan="2">
+            <Grid Height="184" Margin="0,10,0,-4" VerticalAlignment="Top" Width="463">
+                <Button Content="Ajouter" HorizontalAlignment="Left" Margin="95,146,0,6" Width="133" RenderTransformOrigin="-0.711,0.694" Click="Button_Click_2" Height="Auto"/>
+                <TextBox Name="emName" HorizontalAlignment="Left" Height="23" Margin="123,10,0,0" TextWrapping="Wrap"  Text="{Binding Employer.Name,Mode=TwoWay,ValidatesOnNotifyDataErrors=True, UpdateSourceTrigger=PropertyChanged}" VerticalAlignment="Top" Width="253"/>
+                <Label Content="Nom :" HorizontalAlignment="Left" Margin="45,15,0,0" VerticalAlignment="Top"/>
+                <TextBox Name="emTel" HorizontalAlignment="Left" Height="23" Margin="123,53,0,0" TextWrapping="Wrap"  Text="{Binding Employer.Tel,Mode=TwoWay,ValidatesOnNotifyDataErrors=True, UpdateSourceTrigger=PropertyChanged}" VerticalAlignment="Top" Width="253"/>
+                <Label Content="Tel :" HorizontalAlignment="Left" Margin="45,57,0,0" VerticalAlignment="Top"/>
+                <Button Content="Annuler" HorizontalAlignment="Left" Margin="264,146,0,0" VerticalAlignment="Top" Width="133" RenderTransformOrigin="-0.711,0.694" Click="Button_Click_3"/>
+                <Label Content="Entreprise :" HorizontalAlignment="Left" Margin="45,101,0,0" VerticalAlignment="Top"/>
+                <ComboBox Name="emEntreprise" HorizontalAlignment="Left" Margin="123,94,0,0" VerticalAlignment="Top" Width="253"/>
+
+            </Grid>
+        </GroupBox>
+        <GroupBox Header="Bon" HorizontalAlignment="Left" Height="320" Margin="10,287,0,0" VerticalAlignment="Top" Width="498" Grid.RowSpan="2">
+            <Grid Height="226" VerticalAlignment="Top" Width="402">
+                <Button Content="Ajouter" HorizontalAlignment="Left" Margin="91,159,0,0" VerticalAlignment="Top" Width="133" RenderTransformOrigin="-0.711,0.694" Click="Button_Click_4"/>
+                <TextBox Name="boTotal" HorizontalAlignment="Left" Height="23" Margin="123,10,0,0" TextWrapping="Wrap"  Text="{Binding Bon.TotalePrix,Mode=TwoWay,ValidatesOnNotifyDataErrors=True, UpdateSourceTrigger=PropertyChanged}" VerticalAlignment="Top" Width="253"/>
+                <Label Content="Prix Total :" HorizontalAlignment="Left" Margin="45,15,0,0" VerticalAlignment="Top"/>
+                <TextBox Name="prixTotal" HorizontalAlignment="Left" Height="23" Margin="123,61,0,0" TextWrapping="Wrap"  Text="{Binding Bon.FirstPrix,Mode=TwoWay,ValidatesOnNotifyDataErrors=True, UpdateSourceTrigger=PropertyChanged}"  VerticalAlignment="Top" Width="253"/>
+                <Label Content="Prix Donnee :" HorizontalAlignment="Left" Margin="45,61,0,0" VerticalAlignment="Top"/>
+                <Button Content="Annuler" HorizontalAlignment="Left" Margin="243,159,0,0" VerticalAlignment="Top" Width="133" RenderTransformOrigin="-0.711,0.694"/>
+                <Label Content="Employer :" HorizontalAlignment="Left" Margin="45,101,0,0" VerticalAlignment="Top"/>
+                <ComboBox Name="boEmployer" HorizontalAlignment="Left" Margin="123,94,0,0" VerticalAlignment="Top" Width="253"/>
+            </Grid>
+        </GroupBox>
+        <GroupBox Header="les bonnes" HorizontalAlignment="Left" Height="320" Margin="535,287,0,0" VerticalAlignment="Top" Width="518" Grid.ColumnSpan="2" Grid.RowSpan="2">
+            <Grid Height="257" Margin="0,10,0,0" VerticalAlignment="Top" Width="474">
+                <DataGrid Name="dgBons" HorizontalAlignment="Left" Height="189" Margin="10,10,0,0" AutoGenerateColumns="False" VerticalAlignment="Top" Width="454">
+                    <DataGrid.Columns>
+                        <DataGridTextColumn Header="Numéro" Binding="{Binding Id_Bon}" Width="100"/>
+                        <DataGridTextColumn Header="Montant" Binding="{Binding TotalePrix}" Width="100"/>
+                        <DataGridTextColumn Header="Montant donnee" Binding="{Binding FirstPrix}" Width="100"/>
+                        <DataGridTextColumn Header="Reste" Binding="{Binding FirstPrix}" Width="100"/>
+                        <DataGridTextColumn Header="Etat" Binding="{Binding Status}" Width="100"/>
+                    </DataGrid.Columns>
+                </DataGrid>
+                <Button Content="Show" HorizontalAlignment="Left" Margin="51,219,0,0" VerticalAlignment="Top" Width="181"/>
+                <Button Content="Supprimer" HorizontalAlignment="Left" Margin="258,219,0,0" VerticalAlignment="Top" Width="181"/>
+            </Grid>
+        </GroupBox>
+
+    </Grid>
+</UserControl>

@@ -1,0 +1,39 @@
+﻿<UserControl x:Class="Gestion_garage_access.Views.All_Pieces"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:Gestion_garage_access.Views"
+             mc:Ignorable="d" Loaded="UserControl_Loaded" Height="541.5" Width="1062.5"
+>
+    <Grid Margin="10,10,10,88">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="295*"/>
+            <ColumnDefinition Width="226*"/>
+        </Grid.ColumnDefinitions>
+        <DataGrid x:Name="datagrid"  Height="440" VerticalAlignment="Top" HorizontalAlignment="Center" Width="887" IsReadOnly="True" AutoGenerateColumns="False"  SelectionChanged="Datagrid_SelectionChanged" Margin="10,66,145,-62" Grid.ColumnSpan="2" MouseDoubleClick="Datagrid_MouseDoubleClick">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Reference" Binding="{Binding Ref_piece}" Width="100"/>
+                <DataGridTextColumn Header="Nom " Binding="{Binding Nom_piece}" Width="100"/>
+                <DataGridTextColumn Header="Prix d'achat" Binding="{Binding Prix_achat}" Width="100"/>
+                <DataGridTextColumn Header="Prix de vente" Binding="{Binding Prix_vente}" Width="120"/>
+                <DataGridTextColumn Header="Quantite" Binding="{Binding Quantite}" Width="80"/>
+                <DataGridTextColumn Header="Quantite" Binding="{Binding Qualite}" Width="80" />
+                <DataGridTextColumn Header="Unité de mesure" Binding="{Binding Unite}" Width="150"/>
+                <DataGridTextColumn Header="Les automobiles" Binding="{Binding Cars}" Width="200"/>
+
+            </DataGrid.Columns>
+        </DataGrid>
+        <Button Content="Ajouter" HorizontalAlignment="Left" Margin="328,142,0,0" VerticalAlignment="Top" Width="114" Click="Button_Click" Grid.Column="1"/>
+        <Button Content="Modifier" HorizontalAlignment="Left" Margin="328,202,0,0" VerticalAlignment="Top" Width="114" Click="Button_Click_1" Grid.Column="1" />
+        <Button Content="Supprimer" HorizontalAlignment="Left" Margin="328,267,0,0" VerticalAlignment="Top" Width="114" Click="Button_Click_2" Grid.Column="1"/>
+        <Label Content="Rechercher par Ref :" HorizontalAlignment="Left" Margin="76,28,0,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="rechRef" HorizontalAlignment="Left" Height="23" Margin="200,22,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="106"/>
+        <Label Content="Nom :" HorizontalAlignment="Left" Margin="346,28,0,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="rechNom" HorizontalAlignment="Left" Height="23" Margin="399,24,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="106"/>
+        <Label Content="Automobiles :" HorizontalAlignment="Left" Margin="542,28,0,0" VerticalAlignment="Top" Grid.ColumnSpan="2"/>
+        <TextBox x:Name="rechAuto" HorizontalAlignment="Left" Height="23" Margin="49,24,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="106" Grid.Column="1"/>
+        <Button x:Name="btnRech" Content="Rechercher" Grid.Column="1" HorizontalAlignment="Left" Margin="174,28,0,0" VerticalAlignment="Top" Width="114" Click="BtnRech_Click"/>
+
+    </Grid>
+</UserControl>

@@ -1,0 +1,26 @@
+﻿<Window x:Class="Gestion_garage_access.Views.BonInfos"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Gestion_garage_access.Views"
+        mc:Ignorable="d"
+        Title="BonInfos" Height="370.5" Width="585.5">
+    <Grid Margin="0,0,16,13">
+        <Label Content="Num" HorizontalAlignment="Left" Margin="120,48,0,0" VerticalAlignment="Top" Width="143"/>
+        <Label Content="Employer" HorizontalAlignment="Left" Margin="120,90,0,0" VerticalAlignment="Top" Width="157"/>
+        <Label Content="Montant" HorizontalAlignment="Left" Margin="120,130,0,0" VerticalAlignment="Top" Width="143"/>
+        <Label Content="Montant donne" HorizontalAlignment="Left" Margin="120,176,0,0" VerticalAlignment="Top" Width="183"/>
+        <Label Content="Montant Restant" HorizontalAlignment="Left" Margin="120,213,0,0" VerticalAlignment="Top" Width="183"/>
+        <Label Content="Status" HorizontalAlignment="Left" Margin="120,249,0,0" VerticalAlignment="Top" Width="183"/>
+        <TextBlock HorizontalAlignment="Left" Margin="291,53,0,0" TextWrapping="Wrap" Text="{Binding Bon.Id_Bon}" VerticalAlignment="Top" Width="154"/>
+        <TextBlock HorizontalAlignment="Left" Margin="291,94,0,0" TextWrapping="Wrap" Text="{Binding Bon.Employer.Name}" VerticalAlignment="Top" Width="154"/>
+        <TextBlock HorizontalAlignment="Left" Margin="291,137,0,0" TextWrapping="Wrap" Text="{Binding Bon.TotalePrix}"  VerticalAlignment="Top" Width="154"/>
+        <TextBlock HorizontalAlignment="Left" Margin="291,182,0,0" TextWrapping="Wrap" Text="{Binding Bon.FirstPrix}" VerticalAlignment="Top" Width="154"/>
+        <TextBlock HorizontalAlignment="Left" Margin="291,219,0,0" TextWrapping="Wrap" Text="{Binding Bon.RestPrix}"  VerticalAlignment="Top" Width="154"/>
+        <TextBlock HorizontalAlignment="Left" Margin="291,255,0,0" TextWrapping="Wrap" Text="{Binding Bon.Status}" VerticalAlignment="Top" Width="154"/>
+        <Label Content="Date" HorizontalAlignment="Left" Margin="120,14,0,0" VerticalAlignment="Top" Width="143"/>
+        <TextBlock HorizontalAlignment="Left" Margin="291,22,0,0" TextWrapping="Wrap" Text="{Binding Bon.Date}" VerticalAlignment="Top" Width="154"/>
+
+    </Grid>
+</Window>
